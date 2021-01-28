@@ -58,26 +58,16 @@
     </v-app-bar>
 
     <v-main>
-      <Form/>
-      <!-- <HelloWorld/> -->
+
+      <router-view></router-view>
+
     </v-main>
   </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld'
-import Form from './components/Form'
 
 export default {
-  name: 'App',
-
-  components: {
-    // HelloWorld
-    Form
-  },
-
-  data: () => ({
-    //
-  })
+  name: 'App'
 }
 </script>

@@ -149,7 +149,7 @@
                     </template>
                     <v-date-picker
                       v-model="form.apnt_dte"
-                      :min="this.currentDay"
+                      :min="this.dateToday"
                       @input="apnt_dte_Menu = false, firstDayOfWeek, retrieveLocationTime()"
                     >
                     </v-date-picker>
@@ -270,6 +270,7 @@ import axios from 'axios'
 import moment from 'moment'
 
 export default {
+  name: 'Appointment-Form',
   data () {
     return {
       rules: {
@@ -279,6 +280,7 @@ export default {
           value => value.length <= 25 || 'Name must be less than 25 characters'
         ],
         cel_numb: [
+          value => /^[0-9]+$/.test(value) || 'Must be number.',
           value => !!value || 'Mobile number is required.',
           value => value.length >= 11 || 'Mobile number must be 11 digits'
         ],
@@ -288,7 +290,6 @@ export default {
         ],
         message_: [value => value.length <= 25 || 'Max 25 characters']
       },
-      // currentDay: new Date().toISOString().substr(0, 10),
       locationTime: [],
       locations: [],
       formHasErrors: false,
@@ -308,32 +309,15 @@ export default {
         apnt_tme: '',
         treatmnt: '',
         message_: ''
-      },
-      newForm: {
-        clnt_nme: '',
-        emailadd: '',
-        cel_numb: '',
-        locn_cde: '',
-        apnt_dte: new Date().toISOString().substr(0, 10),
-        apnt_tme: '',
-        treatmnt: '',
-        message_: ''
       }
     }
   },
-  // watch: {
-  //   snackbar: function (value) {
-  //     if (value === false) {
-  //       this.refreshPage()
-  //     }
-  //   }
-  // },
   computed: {
     firstDayOfWeek () {
       var date = new Date(this.form.apnt_dte)
       return date.getDay()
     },
-    currentDay () {
+    dateToday () {
       return moment().add(1, 'days').format('YYYY-MM-DD')
     }
   },
@@ -375,19 +359,10 @@ export default {
     },
     reset () {
       this.$refs.form.reset()
-    },
-    refreshPage () {
-      this.$router.go()
-      this.form = { ...this.newForm }
     }
-    // getFirstDayOfWeek () {
-    //   var date = new Date(this.form.apnt_dte)
-    //   this.firstDayOfWeek = date.getDay()
-    // }
   },
   created () {
     this.retrieveLocations()
-    // this.getFirstDayOfWeek()
   }
 }
 </script>
