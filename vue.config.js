@@ -3,6 +3,6 @@ module.exports = {
     'vuetify'
   ],
   devServer: {
-    disableHostCheck: true
+    public: 'harem-appointment-frontend-6tijw.ondigitalocean.app'
   }
 }
