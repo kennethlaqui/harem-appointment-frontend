@@ -325,7 +325,7 @@ export default {
     retrieveLocations () {
       axios.get('/locations', {
         params: {
-          stor_nme: process.env.STORE_NAME
+          stor_nme: process.env.VUE_APP_STORE_NAME
         }
       })
         .then(response => {
