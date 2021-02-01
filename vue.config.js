@@ -3,6 +3,7 @@ module.exports = {
     'vuetify'
   ],
   devServer: {
-    public: 'harem-appointment-frontend-6tijw.ondigitalocean.app'
+    public: 'localhost:8080'
+
   }
 }
