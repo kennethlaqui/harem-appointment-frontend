@@ -35,14 +35,15 @@ export default {
         { text: 'Time', value: 'mil_time', width: 130 },
         { text: 'Treatment', value: 'treatmnt', width: 130 },
         { text: 'Country', value: 'location' }
-      ]
+      ],
+      stor_nme: process.env.VUE_APP_STORE_NAME
     }
   },
   methods: {
     retrieveAppointments () {
       axios.get('/appointments', {
         params: {
-          stor_nme: 'strip'
+          stor_nme: this.stor_nme
         }
       })
         .then(response => {

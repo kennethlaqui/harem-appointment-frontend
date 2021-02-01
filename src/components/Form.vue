@@ -308,8 +308,10 @@ export default {
         apnt_dte: moment().add(1, 'days').format('YYYY-MM-DD'),
         apnt_tme: '',
         treatmnt: '',
-        message_: ''
-      }
+        message_: '',
+        stor_nme: process.env.VUE_APP_STORE_NAME
+      },
+      stor_nme: process.env.VUE_APP_STORE_NAME
     }
   },
   computed: {
@@ -325,7 +327,7 @@ export default {
     retrieveLocations () {
       axios.get('/locations', {
         params: {
-          stor_nme: process.env.VUE_APP_STORE_NAME
+          stor_nme: this.stor_nme
         }
       })
         .then(response => {
