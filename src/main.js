@@ -8,7 +8,11 @@ import axios from 'axios'
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'http://localhost:8000/api'
+// development endpoint
+// axios.defaults.baseURL = 'http://localhost:8000/api'
+
+// production endpoint
+axios.defaults.baseURL = 'https://harem-appointment-backend-rma5r.ondigitalocean.app/api'
 
 new Vue({
   router,
