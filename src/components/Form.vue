@@ -22,14 +22,14 @@
 
           <v-spacer />
 
-          <v-icon
+          <!-- <v-icon
             color="purple darken-3"
             large
-          >
+          > -->
 
-            mdi-account
+            <!-- mdi-account -->
 
-          </v-icon>
+          <!-- </v-icon> -->
 
         </v-app-bar>
         <!-- end of app bar -->
@@ -218,7 +218,7 @@
 
                 </v-btn>
 
-                <v-btn @click="submit" small :disabled="!formHasErrors">
+                <v-btn @click="submit" small :disabled="!formHasErrors || btn_disabled" >
 
                   Submit
 
@@ -282,7 +282,7 @@ export default {
         cel_numb: [
           value => /^[0-9]+$/.test(value) || 'Must be number.',
           value => !!value || 'Mobile number is required.',
-          value => value.length >= 11 || 'Mobile number must be 11 digits'
+          value => value.length === 11 || 'Mobile number must be 11 digits'
         ],
         emailadd: [
           value => !!value || 'E-mail is required',
@@ -324,6 +324,9 @@ export default {
   methods: {
     retrieveLocations () {
       axios.get('/locations', {
+        params: {
+          stor_nme: 'strip'
+        }
       })
         .then(response => {
           this.locations = response.data
@@ -347,10 +350,11 @@ export default {
       this.loading = true
       this.btn_disabled = true
       axios.post('/appointment/create', this.form)
-        .then(() => {
+        .then(response => {
           this.loading = false
           this.snackbar = true
           this.$refs.form.reset()
+          response.status === 200 ? this.btn_disabled = false : this.btn_disabled = true
         })
         .catch(e => {
           const backendErrors = e.response.data.errors
