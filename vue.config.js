@@ -3,10 +3,7 @@ module.exports = {
     'vuetify'
   ],
   devServer: {
-    // allowedHosts: [
-    //   'https://harem-appointment-frontend-6tijw.ondigitalocean.app',
-    //   'https://browhaus-sa64r.ondigitalocean.app',
-    //   'https://strip-rudek.ondigitalocean.app'
-    // ]
+    host: '0.0.0.0',
+    disableHostCheck: true
   }
 }
