@@ -33,13 +33,18 @@ export default {
         { text: 'Location', value: 'locn_nme', width: 130 },
         { text: 'Date', value: 'apnt_dte', width: 130 },
         { text: 'Time', value: 'mil_time', width: 130 },
-        { text: 'Treatment', value: 'treatmnt', width: 130 }
+        { text: 'Treatment', value: 'treatmnt', width: 130 },
+        { text: 'Country', value: 'location' }
       ]
     }
   },
   methods: {
     retrieveAppointments () {
-      axios.get('/appointments')
+      axios.get('/appointments', {
+        params: {
+          stor_nme: 'strip'
+        }
+      })
         .then(response => {
           this.appointments = response.data
         })
