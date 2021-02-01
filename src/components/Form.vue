@@ -325,7 +325,7 @@ export default {
     retrieveLocations () {
       axios.get('/locations', {
         params: {
-          stor_nme: process.env.PORT
+          stor_nme: process.env.STORE_NAME
         }
       })
         .then(response => {
