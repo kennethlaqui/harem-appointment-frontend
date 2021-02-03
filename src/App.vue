@@ -1,12 +1,11 @@
 <template>
+
   <v-app>
+
     <v-app-bar
-      aabsolute
       app
-      color="white"
       dense
       flat
-      hide-on-scroll
     >
 
       <v-spacer />
@@ -72,12 +71,21 @@
         >
 
           <v-img
-            class="mx-16"
-            alt="strip"
             contain
-            :src="images.company"
+            :src="logo.strip"
             height="400px"
             width="300px"
+            class="mb-n10"
+            v-if="stor_nme === 'strip'"
+          />
+
+          <v-img
+            contain
+            :src="logo.browhaus"
+            height="400px"
+            width="300px"
+            class="mb-n10"
+            v-else
           />
 
         </v-col>
@@ -97,7 +105,9 @@
           justify="center"
         >
 
-          <h1 class="stripH1">Hey Strip Mates!</h1>
+          <h1 class="stripH1" v-if="stor_nme === 'strip'">Hey Strip Mates!</h1>
+
+          <h1 class="stripH1" v-else>Hey Brow Buddy!</h1>
 
         </v-col>
 
@@ -111,7 +121,9 @@
 
         <v-col md="6">
 
-          <h1 class="text-justify.text-center stripH1"> Welcome to the Strip: Ministry of Waxing, the Global Authority in Hair Removal with 48 parlours in 12 major capital cities worldwide.</h1>
+          <h1 class="text-justify.text-center stripH1" v-if="stor_nme === 'strip'"> Welcome to the Strip: Ministry of Waxing, the Global Authority in Hair Removal with 48 parlours in 12 major capital cities worldwide.</h1>
+
+          <h1 class="text-justify.text-center stripH1" v-else>Welcome to your one-stop brow and lash grooming salon built for you, the image-conscious urbanite who demands not just function, but function and style.</h1>
 
         </v-col>
 
@@ -123,8 +135,12 @@
 
       <v-spacer />
 
-      <!-- if using vue-router -->
-      <router-view />
+      <v-container fluid>
+
+        <!-- if using vue-router -->
+        <router-view></router-view>
+
+      </v-container>
 
     </v-main>
 
@@ -138,9 +154,11 @@ export default {
   name: 'App',
   data () {
     return {
+      stor_nme: process.env.VUE_APP_STORE_NAME,
       style: false,
-      images: {
-        company: require('@/assets/strip.jpg')
+      logo: {
+        strip: require('@/assets/strip.jpg'),
+        browhaus: require('@/assets/browhaus.png')
       }
     }
   }
@@ -153,7 +171,7 @@ export default {
   .stripH1{
     font-family: 'Gotham Thin', sans-serif;
     text-align: center;
-    color:#4A148C;
+    color:#7e7e7e;
   }
 
 </style>

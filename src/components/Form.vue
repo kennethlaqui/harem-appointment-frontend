@@ -22,6 +22,22 @@
 
           <v-spacer />
 
+          <div class="mr-2">
+
+            <v-btn
+              icon
+              flat
+              @click="toggleTheme"
+            >
+
+              <v-icon v-if="this.$vuetify.theme.dark">mdi-brightness-4</v-icon>
+
+              <v-icon v-else>mdi-brightness-5</v-icon>
+
+            </v-btn>
+
+          </div>
+
           <!-- <v-icon
             color="purple darken-3"
             large
@@ -311,7 +327,6 @@ export default {
         message_: '',
         stor_nme: process.env.VUE_APP_STORE_NAME
       },
-      // title: process.env.VUE_APP_STORE_NAME,
       stor_nme: process.env.VUE_APP_STORE_NAME
     }
   },
@@ -369,6 +384,9 @@ export default {
     },
     reset () {
       this.$refs.form.reset()
+    },
+    toggleTheme () {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
   },
   created () {
@@ -376,7 +394,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import url('http://fonts.cdnfonts.com/css/gotham');
-</style>
