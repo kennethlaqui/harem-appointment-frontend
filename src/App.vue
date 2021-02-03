@@ -68,6 +68,7 @@
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  style: false
 }
 </script>
