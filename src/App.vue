@@ -84,6 +84,7 @@
 export default {
   name: 'App',
   data: () => ({
+    style: false,
     images: {
       company: require('@/assets/strip.jpg')
     }

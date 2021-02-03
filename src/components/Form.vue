@@ -18,7 +18,7 @@
           height="100"
         >
 
-          <v-app-bar-title>Strip Appointment Time</v-app-bar-title>
+          <v-app-bar-title>{{ title }} Appointment Time</v-app-bar-title>
 
           <v-spacer />
 
@@ -150,7 +150,7 @@
                     <v-date-picker
                       v-model="form.apnt_dte"
                       :min="this.dateToday"
-                      @input="apnt_dte_Menu = false, firstDayOfWeek, retrieveLocationTime()"
+                      @input="apnt_dte_Menu = false, dayNumber, retrieveLocationTime()"
                     >
                     </v-date-picker>
                   </v-menu>
@@ -311,11 +311,12 @@ export default {
         message_: '',
         stor_nme: process.env.VUE_APP_STORE_NAME
       },
+      title: process.env.VUE_APP_STORE_NAME,
       stor_nme: process.env.VUE_APP_STORE_NAME
     }
   },
   computed: {
-    firstDayOfWeek () {
+    dayNumber () {
       var date = new Date(this.form.apnt_dte)
       return date.getDay()
     },
@@ -338,7 +339,7 @@ export default {
       axios.get('/time', {
         params: {
           locn_cde: this.form.locn_cde,
-          day_numb: this.firstDayOfWeek
+          day_numb: this.dayNumber
         }
       })
         .then(response => {
@@ -372,3 +373,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@import url('http://fonts.cdnfonts.com/css/gotham');
+</style>
