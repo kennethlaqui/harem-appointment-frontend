@@ -148,7 +148,7 @@ export default {
 </script>
 
 <style lang ="scss">
-@import url('http://fonts.cdnfonts.com/css/gotham');
+@import url('https://fonts.cdnfonts.com/css/gotham');
 
   .stripH1{
     font-family: 'Gotham Thin', sans-serif;
