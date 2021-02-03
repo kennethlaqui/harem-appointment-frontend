@@ -311,7 +311,7 @@ export default {
         message_: '',
         stor_nme: process.env.VUE_APP_STORE_NAME
       },
-      title: process.env.VUE_APP_STORE_NAME,
+      // title: process.env.VUE_APP_STORE_NAME,
       stor_nme: process.env.VUE_APP_STORE_NAME
     }
   },
@@ -322,6 +322,9 @@ export default {
     },
     dateToday () {
       return moment().add(1, 'days').format('YYYY-MM-DD')
+    },
+    title () {
+      return process.env.VUE_APP_STORE_NAME.charAt(0).toUpperCase() + process.env.VUE_APP_STORE_NAME.slice(1)
     }
   },
   methods: {
