@@ -58,6 +58,20 @@
     </v-app-bar>
 
     <v-main>
+      <v-row align="center" justify="center">
+        <v-col align="center" justify="center">
+
+          <v-img class="mx-16"
+            alt="strip"
+            contain
+            :src="images.company"
+            height="400px"
+            width="300px"
+          />
+
+        </v-col>
+
+      </v-row>
 
       <router-view />
 
@@ -68,6 +82,11 @@
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  data: () => ({
+    images: {
+      company: require('@/assets/strip.jpg')
+    }
+  })
 }
 </script>
