@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '../App.vue'
-import Form from '../components/Form.vue'
+import Form from '../views/Form.vue'
 import Appointments from '../components/Appointments.vue'
 
 Vue.use(VueRouter)

@@ -2,8 +2,6 @@
 
   <div>
 
-    <v-container>
-
       <v-card
         class="mx-auto mt-5"
         max-width="500"
@@ -18,7 +16,7 @@
           height="100"
         >
 
-          <v-app-bar-title>{{ title }} Appointment Time</v-app-bar-title>
+          <v-app-bar-title>Strip Appointment Time</v-app-bar-title>
 
           <v-spacer />
 
@@ -26,7 +24,7 @@
 
             <v-btn
               icon
-              flat
+              text
               @click="toggleTheme"
             >
 
@@ -250,6 +248,20 @@
 
       </v-card>
 
+      <!-- <v-row>
+
+        <v-col>
+
+          <h4 class="text-justify.text-center">
+            <a href="#">
+              You can also make an appointment with Browhaus. Click here!
+            </a>
+          </h4>
+
+        </v-col>
+
+      </v-row> -->
+
       <!-- message -->
       <v-snackbar
         v-model="snackbar"
@@ -275,8 +287,6 @@
 
       </v-snackbar>
 
-    </v-container>
-
   </div>
 
 </template>
@@ -287,6 +297,11 @@ import moment from 'moment'
 
 export default {
   name: 'Appointment-Form',
+  props: {
+    store: {
+      type: String
+    }
+  },
   data () {
     return {
       rules: {
@@ -325,9 +340,8 @@ export default {
         apnt_tme: '',
         treatmnt: '',
         message_: '',
-        stor_nme: process.env.VUE_APP_STORE_NAME
-      },
-      stor_nme: process.env.VUE_APP_STORE_NAME
+        stor_nme: this.store
+      }
     }
   },
   computed: {
@@ -337,16 +351,16 @@ export default {
     },
     dateToday () {
       return moment().add(1, 'days').format('YYYY-MM-DD')
-    },
-    title () {
-      return process.env.VUE_APP_STORE_NAME.charAt(0).toUpperCase() + process.env.VUE_APP_STORE_NAME.slice(1)
     }
+    // title () {
+    //   return this.store.charAt(0).toUpperCase() + process.env.VUE_APP_STORE_NAME.slice(1)
+    // }
   },
   methods: {
     retrieveLocations () {
       axios.get('/locations', {
         params: {
-          stor_nme: this.stor_nme
+          stor_nme: this.store
         }
       })
         .then(response => {
@@ -394,3 +408,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@import url('https://fonts.cdnfonts.com/css/gotham');
+
+  .v-text-field {
+    font-family: 'Calibri', sans-serif;
+  }
+
+</style>

@@ -57,85 +57,83 @@
 
     </v-app-bar>
 
-    <v-main>
+    <v-main class="mt-n16">
 
-      <!-- logo -->
-      <v-row
-        align="center"
-        justify="center"
-      >
+      <v-container>
 
-        <v-col
+        <!-- logo -->
+        <v-row
           align="center"
           justify="center"
         >
 
-          <v-img
-            contain
-            :src="logo.strip"
-            height="400px"
-            width="300px"
-            class="mb-n10"
-            v-if="stor_nme === 'strip'"
-          />
+          <v-col
+            align="center"
+            justify="center"
+          >
 
-          <v-img
-            contain
-            :src="logo.browhaus"
-            height="400px"
-            width="300px"
-            class="mb-n10"
-            v-else
-          />
+            <v-img
+              contain
+              :src="logo.strip"
+              height="400px"
+              width="300px"
+              class="mb-n10"
+              v-if="stor_nme === 'strip'"
+            />
 
-        </v-col>
+            <v-img
+              contain
+              :src="logo.browhaus"
+              height="400px"
+              width="300px"
+              class="mb-n16"
+              v-else
+            />
 
-      </v-row>
+          </v-col>
 
-      <!-- strip description -->
-      <!-- 1st descript -->
-      <v-row
-        align="center"
-        justify="center"
-        class="mt-n16"
-      >
+        </v-row>
 
-        <v-col
+        <!-- strip description -->
+        <!-- 1st descript -->
+        <v-row
+          align="center"
+          justify="center"
+          class="mt-n16"
+        >
+
+          <v-col
+            align="center"
+            justify="center"
+          >
+
+            <h1 class="stripH1" v-if="stor_nme === 'strip'">Hey Strip Mates!</h1>
+
+            <h1 class="stripH1" v-else>Hey Brow Buddy!</h1>
+
+          </v-col>
+
+        </v-row>
+
+        <!-- 2nd descript -->
+        <v-row
           align="center"
           justify="center"
         >
 
-          <h1 class="stripH1" v-if="stor_nme === 'strip'">Hey Strip Mates!</h1>
+          <v-col md="6">
 
-          <h1 class="stripH1" v-else>Hey Brow Buddy!</h1>
+            <h1 class="text-justify.text-center stripH1" v-if="stor_nme === 'strip'"> Welcome to the Strip: Ministry of Waxing, the Global Authority in Hair Removal with 48 parlours in 12 major capital cities worldwide.</h1>
 
-        </v-col>
+            <h1 class="text-justify.text-center stripH1" v-else>Welcome to your one-stop brow and lash grooming salon built for you, the image-conscious urbanite who demands not just function, but function and style.</h1>
 
-      </v-row>
+          </v-col>
 
-      <!-- 2nd descript -->
-      <v-row
-        align="center"
-        justify="center"
-      >
+        </v-row>
+        <!-- end of strip description -->
 
-        <v-col md="6">
-
-          <h1 class="text-justify.text-center stripH1" v-if="stor_nme === 'strip'"> Welcome to the Strip: Ministry of Waxing, the Global Authority in Hair Removal with 48 parlours in 12 major capital cities worldwide.</h1>
-
-          <h1 class="text-justify.text-center stripH1" v-else>Welcome to your one-stop brow and lash grooming salon built for you, the image-conscious urbanite who demands not just function, but function and style.</h1>
-
-        </v-col>
-
-      </v-row>
-      <!-- end of strip description -->
-
-      <!-- browhaus description -->
-      <!-- end of browhaus description -->
-
-      <v-spacer />
-
-      <v-container fluid>
+        <!-- browhaus description -->
+        <!-- end of browhaus description -->
 
         <!-- if using vue-router -->
         <router-view></router-view>
@@ -154,7 +152,7 @@ export default {
   name: 'App',
   data () {
     return {
-      stor_nme: process.env.VUE_APP_STORE_NAME,
+      stor_nme: 'strip',
       style: false,
       logo: {
         strip: require('@/assets/strip.jpg'),
@@ -165,10 +163,10 @@ export default {
 }
 </script>
 
-<style lang ="scss">
+<style>
 @import url('https://fonts.cdnfonts.com/css/gotham');
 
-  .stripH1{
+  .stripH1 {
     font-family: 'Gotham Thin', sans-serif;
     text-align: center;
     color:#7e7e7e;
