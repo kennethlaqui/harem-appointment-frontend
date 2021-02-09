@@ -419,7 +419,7 @@ export default {
 @import url('https://fonts.cdnfonts.com/css/gotham');
 
   .v-text-field {
-    font-family: 'Gotham', sans-serif;
+    font-family: 'Calibri', sans-serif;
   }
 
 </style>
