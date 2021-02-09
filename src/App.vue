@@ -10,50 +10,7 @@
 
       <v-spacer />
 
-      <!-- twitter -->
-      <div class="mr-2">
-
-        <v-btn icon>
-
-          <v-icon large color="purple darken-3">
-
-            mdi-twitter
-
-          </v-icon>
-
-        </v-btn>
-
-      </div>
-
-      <!-- facebook -->
-      <div class="mr-2">
-
-        <v-btn icon>
-
-          <v-icon large color="purple darken-3">
-
-            mdi-facebook
-
-          </v-icon>
-
-        </v-btn>
-
-      </div>
-
-      <!-- instagram -->
-      <div class="mr-2">
-
-        <v-btn icon>
-
-          <v-icon large color="purple darken-3">
-
-            mdi-instagram
-
-          </v-icon>
-
-        </v-btn>
-
-      </div>
+      <SocialIcons :store="stor_nme"/>
 
     </v-app-bar>
 
@@ -109,7 +66,7 @@
 
             <h1 class="stripH1" v-if="stor_nme === 'strip'">Hey Strip Mates!</h1>
 
-            <h1 class="stripH1" v-else>Hey Brow Buddy!</h1>
+            <h1 class="browhausH1" v-else>Hey Brow Buddy!</h1>
 
           </v-col>
 
@@ -125,7 +82,7 @@
 
             <h1 class="text-justify.text-center stripH1" v-if="stor_nme === 'strip'"> Welcome to the Strip: Ministry of Waxing, the Global Authority in Hair Removal with 48 parlours in 12 major capital cities worldwide.</h1>
 
-            <h1 class="text-justify.text-center stripH1" v-else>Welcome to your one-stop brow and lash grooming salon built for you, the image-conscious urbanite who demands not just function, but function and style.</h1>
+            <h1 class="text-justify.text-center browhausH1" v-else>Welcome to your one-stop brow and lash grooming salon built for you, the image-conscious urbanite who demands not just function, but function and style.</h1>
 
           </v-col>
 
@@ -147,12 +104,16 @@
 </template>
 
 <script>
+import SocialIcons from '@/components/SocialMedia.vue'
 
 export default {
   name: 'App',
+  components: {
+    SocialIcons
+  },
   data () {
     return {
-      stor_nme: 'browhaus',
+      stor_nme: 'strip',
       style: false,
       logo: {
         strip: require('@/assets/strip.jpg'),
@@ -165,11 +126,19 @@ export default {
 
 <style>
 @import url('https://fonts.cdnfonts.com/css/gotham');
+@import url('https://www.cssfontstack.com/Helvetica');
 
   .stripH1 {
     font-family: 'Gotham Thin', sans-serif;
     text-align: center;
-    color:#7e7e7e;
+    color:#6A1B9A;
   }
+  .browhausH1{
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  font-size: 35px;
+  text-align: center;
+  color:#9E9D24;
+}
 
 </style>
