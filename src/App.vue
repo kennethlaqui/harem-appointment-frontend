@@ -6,6 +6,7 @@
       app
       dense
       flat
+      color="white"
     >
 
       <v-spacer />
@@ -113,7 +114,7 @@ export default {
   },
   data () {
     return {
-      stor_nme: 'strip',
+      stor_nme: 'browhaus',
       style: false,
       logo: {
         strip: require('@/assets/strip.jpg'),
