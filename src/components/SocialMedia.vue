@@ -1,13 +1,5 @@
 <template>
-
-  <v-app>
-    <v-app-bar
-      app
-      dense
-      flat
-    >
-    <v-spacer />
-
+  <div>
       <!-- facebook strip-->
       <template v-if="store === 'strip'">
         <v-btn icon href="https://www.facebook.com/stripmanila/" target="_blank">
@@ -36,7 +28,7 @@
 
       <!-- twitter strip-->
       <template v-if="store === 'strip'">
-        <v-btn icon href="https://www.facebook.com/stripmanila/" target="_blank">
+        <v-btn icon href="https://twitter.com/stripmanila/" target="_blank">
 
           <v-icon large color="purple darken-3">
 
@@ -49,7 +41,7 @@
 
       <!-- twitter browhaus-->
       <template v-else>
-        <v-btn icon href="https://www.facebook.com/BrowhausManila/" target="_blank">
+        <v-btn icon href="https://twitter.com/browhausmanila" target="_blank">
 
           <v-icon large color="lime darken-3">
 
@@ -61,7 +53,7 @@
       </template>
       <!-- instagram strip-->
       <template v-if="store === 'strip'">
-        <v-btn icon href="https://www.facebook.com/stripmanila/" target="_blank">
+        <v-btn icon href="https://www.instagram.com/stripmanila/" target="_blank">
 
           <v-icon large color="purple darken-3">
 
@@ -85,8 +77,8 @@
         </v-btn>
       </template>
 
-      </v-app-bar>
-  </v-app>
+      </div>
+
 </template>
 
 <script>
