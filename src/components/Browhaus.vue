@@ -13,7 +13,7 @@
         <!-- app bar -->
         <v-app-bar
           elevation="4"
-          color="#c5003e"
+          color="#b7bf10"
           dark
           height="100"
         >
@@ -416,10 +416,10 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.cdnfonts.com/css/gotham');
+@import url('https://www.cssfontstack.com/Helvetica');
 
   .v-text-field {
-    font-family: 'Calibri', sans-serif;
+   font-family: 'Helvetica Neue', sans-serif;
   }
 
 </style>
