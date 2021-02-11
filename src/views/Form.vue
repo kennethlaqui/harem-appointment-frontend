@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      stor_nme: 'browhaus'
+      stor_nme: process.env.VUE_APP_STORE_NAME
     }
   }
 }

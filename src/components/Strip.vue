@@ -226,11 +226,11 @@
 
                 <v-spacer />
 
-                <v-btn @click="reset" small>
+                <!-- <v-btn @click="reset" small>
 
                   Reset
 
-                </v-btn>
+                </v-btn> -->
 
                 <v-btn @click="submit" small :disabled="!formHasErrors || btn_disabled" >
 
@@ -313,13 +313,13 @@ export default {
         cel_numb: [
           value => /^[0-9]+$/.test(value) || 'Must be number.',
           value => !!value || 'Mobile number is required.',
-          value => value.length === 11 || 'Mobile number must be 11 digits'
+          value => value.length === 11 || 'Mobile number must be 11 digits.'
         ],
         emailadd: [
-          value => !!value || 'E-mail is required',
-          value => /.+@.+\..+/.test(value) || 'E-mail must be valid'
+          value => !!value || 'E-mail is required.',
+          value => /.+@.+\..+/.test(value) || 'Invalid E-mail.'
         ],
-        message_: [value => value.length <= 25 || 'Max 25 characters']
+        message_: [value => value.length <= 140 || 'Max 140 characters']
       },
       locationTime: [],
       locations: [],
@@ -410,9 +410,21 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.cdnfonts.com/css/gotham');
+
+@font-face {
+  font-family: "Gotahm Thin";
+  src: url(../fonts/Gotham-XLight.ttf) format("TrueType");
+}
 
   .v-text-field {
+    font-family: 'Gotham', sans-serif;
+  }
+
+  .v-app-bar-title {
+    font-family: 'Gotham', sans-serif;
+  }
+
+  .v-btn {
     font-family: 'Gotham', sans-serif;
   }
 

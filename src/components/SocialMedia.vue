@@ -1,83 +1,98 @@
 <template>
+
   <div>
-      <!-- facebook strip-->
-      <template v-if="store === 'strip'">
-        <v-btn icon href="https://www.facebook.com/stripmanila/" target="_blank">
 
-          <v-icon large color="purple darken-3">
+    <!-- facebook strip-->
+    <template v-if="store === 'strip'">
 
-          mdi-facebook
+      <v-btn icon href="https://www.facebook.com/stripmanila/" target="_blank">
 
-          </v-icon>
+        <v-icon large color="purple darken-3">
 
-        </v-btn>
-      </template>
+        mdi-facebook
 
-       <!-- facebook browhaus-->
-      <template v-else>
-        <v-btn icon href="https://www.facebook.com/BrowhausManila/" target="_blank">
+        </v-icon>
 
-          <v-icon large color="lime darken-3">
+      </v-btn>
 
-          mdi-facebook
+    </template>
 
-          </v-icon>
+    <!-- facebook browhaus-->
+    <template v-else>
 
-        </v-btn>
-      </template>
+      <v-btn icon href="https://www.facebook.com/BrowhausManila/" target="_blank">
 
-      <!-- twitter strip-->
-      <template v-if="store === 'strip'">
-        <v-btn icon href="https://twitter.com/stripmanila/" target="_blank">
+        <v-icon large color="lime darken-3">
 
-          <v-icon large color="purple darken-3">
+        mdi-facebook
 
-          mdi-twitter
+        </v-icon>
 
-          </v-icon>
+      </v-btn>
 
-        </v-btn>
-      </template>
+    </template>
 
-      <!-- twitter browhaus-->
-      <template v-else>
-        <v-btn icon href="https://twitter.com/browhausmanila" target="_blank">
+    <!-- twitter strip-->
+    <template v-if="store === 'strip'">
 
-          <v-icon large color="lime darken-3">
+      <v-btn icon href="https://twitter.com/stripmanila/" target="_blank">
 
-          mdi-twitter
+        <v-icon large color="purple darken-3">
 
-          </v-icon>
+        mdi-twitter
 
-        </v-btn>
-      </template>
-      <!-- instagram strip-->
-      <template v-if="store === 'strip'">
-        <v-btn icon href="https://www.instagram.com/stripmanila/" target="_blank">
+        </v-icon>
 
-          <v-icon large color="purple darken-3">
+      </v-btn>
 
-          mdi-instagram
+    </template>
 
-          </v-icon>
+    <!-- twitter browhaus-->
+    <template v-else>
 
-        </v-btn>
-      </template>
+      <v-btn icon href="https://twitter.com/browhausmanila" target="_blank">
 
-       <!-- instagram browhaus-->
-      <template v-else>
-        <v-btn icon href="https://www.facebook.com/BrowhausManila/" target="_blank">
+        <v-icon large color="lime darken-3">
 
-          <v-icon large color="lime darken-3">
+        mdi-twitter
 
-          mdi-instagram
+        </v-icon>
 
-          </v-icon>
+      </v-btn>
 
-        </v-btn>
-      </template>
+    </template>
 
-      </div>
+    <!-- instagram strip-->
+    <template v-if="store === 'strip'">
+
+      <v-btn icon href="https://www.instagram.com/stripmanila/" target="_blank">
+
+        <v-icon large color="purple darken-3">
+
+        mdi-instagram
+
+        </v-icon>
+
+      </v-btn>
+
+    </template>
+
+    <!-- instagram browhaus-->
+    <template v-else>
+
+      <v-btn icon href="https://www.instgram.com/BrowhausManila/" target="_blank">
+
+        <v-icon large color="lime darken-3">
+
+        mdi-instagram
+
+        </v-icon>
+
+      </v-btn>
+
+    </template>
+
+  </div>
 
 </template>
 

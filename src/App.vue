@@ -6,7 +6,7 @@
       app
       dense
       flat
-      color="white"
+      :color="color"
     >
 
       <v-spacer />
@@ -112,10 +112,14 @@ export default {
   components: {
     SocialIcons
   },
+  computed: {
+    color () {
+      return this.$vuetify.theme.dark ? '#121212' : 'white'
+    }
+  },
   data () {
     return {
-      stor_nme: 'browhaus',
-      style: false,
+      stor_nme: process.env.VUE_APP_STORE_NAME,
       logo: {
         strip: require('@/assets/strip.jpg'),
         browhaus: require('@/assets/browhaus.png')
@@ -126,20 +130,30 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.cdnfonts.com/css/gotham');
-@import url('https://www.cssfontstack.com/Helvetica');
+/* @import url('https://fonts.cdnfonts.com/css/gotham'); */
+/* @import url('https://www.cssfontstack.com/Helvetica'); */
+
+@font-face {
+  font-family: "Gotham Thin";
+  src: url(./fonts/Gotham-XLight.ttf) format("TrueType");
+}
+
+@font-face {
+  font-family: 'VAG Rounded Std';
+  src: url(./fonts/VAGRoundedStd-Thin.otf) format("OpenType");
+}
 
   .stripH1 {
     font-family: 'Gotham Thin', sans-serif;
     text-align: center;
     color:#6A1B9A;
   }
+
   .browhausH1{
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 100;
-  font-size: 35px;
+  font-family: 'VAG Rounded Std', sans-serif;
   text-align: center;
-  color:#9E9D24;
+  color:#76881d;
+
 }
 
 </style>

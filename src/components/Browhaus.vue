@@ -216,7 +216,7 @@
                     outlined
                     label="Message"
                     counter
-                    :rules="rules.message"
+                    :rules="rules.message_"
                   />
 
                 </v-col>
@@ -228,11 +228,11 @@
 
                 <v-spacer />
 
-                <v-btn @click="reset" small>
+                <!-- <v-btn @click="reset" small>
 
                   Reset
 
-                </v-btn>
+                </v-btn> -->
 
                 <v-btn @click="submit" small :disabled="!formHasErrors || btn_disabled" >
 
@@ -321,9 +321,9 @@ export default {
         ],
         emailadd: [
           value => !!value || 'E-mail is required',
-          value => /.+@.+\..+/.test(value) || 'E-mail must be valid'
+          value => /.+@.+\..+/.test(value) || 'Invalid E-mail.'
         ],
-        message_: [value => value.length <= 25 || 'Max 25 characters']
+        message_: [value => value.length <= 140 || 'Max 140 characters']
       },
       locationTime: [],
       locations: [],
@@ -416,10 +416,22 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://www.cssfontstack.com/Helvetica');
+
+@font-face {
+  font-family: "VAG Rounded Std";
+  src: url(../fonts/VAGRoundedStd-Thin.otf) format("OpenType");
+}
 
   .v-text-field {
-   font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'VAG Rounded Std', sans-serif;
+  }
+
+  .v-app-bar-title {
+    font-family: 'VAG Rounded Std', sans-serif;
+  }
+
+  .v-btn {
+    font-family: 'VAG Rounded Std', sans-serif;
   }
 
 </style>
