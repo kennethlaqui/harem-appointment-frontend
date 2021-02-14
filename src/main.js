@@ -12,7 +12,7 @@ Vue.config.productionTip = true
 // axios.defaults.baseURL = 'http://localhost:8000/api'
 
 // production endpoint
-axios.defaults.baseURL = 'https://harem-api-3dpac.ondigitalocean.app//api'
+axios.defaults.baseURL = 'https://harem-api-3dpac.ondigitalocean.app/api'
 
 new Vue({
   router,
