@@ -8,8 +8,11 @@ import axios from 'axios'
 
 Vue.config.productionTip = true
 
-// development endpoint
+// development endpoint windows
 // axios.defaults.baseURL = 'http://localhost:8000/api'
+
+// development endpoint docker
+// axios.defaults.baseURL = 'http://host.docker.internal:8000/api'
 
 // production endpoint
 axios.defaults.baseURL = 'https://harem-api-3dpac.ondigitalocean.app/api'
