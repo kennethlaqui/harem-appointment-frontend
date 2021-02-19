@@ -10,6 +10,6 @@ services:
    volumes:
      - "/app/node_modules" 
      - ./:/app
-   environment:
-     - NODE_ENV=development
-     - CHOKIDAR_USEPOLLING=true
+   #environment:
+   #  - NODE_ENV=development
+   #  - CHOKIDAR_USEPOLLING=true
